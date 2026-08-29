@@ -1,6 +1,7 @@
 package com.example.intents72;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
 
@@ -28,9 +29,16 @@ public class MainActivity extends AppCompatActivity {
             // SecondActivity = page we want to open
             Intent intent =
                     new Intent(MainActivity.this, SecondActivity.class);
+            // Create an Implicit Intent
+            // ACTION_VIEW tells Android that we want
+            // to view some content.
+            Intent intent1 = new Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse("https://www.google.com")
+            );
 
             // Start SecondActivity
-            startActivity(intent);
+            startActivity(intent1);
         });
     }
 }
